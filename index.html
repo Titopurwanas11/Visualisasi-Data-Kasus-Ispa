@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard ISPA Interaktif - RS Permata Hati</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Analisis Kasus ISPA - RS Permata Hati</h1>
+      <p>
+        Visualisasi interaktif data kasus berdasarkan demografi dan tingkat
+        keparahan.
+      </p>
+    </header>
+
+    <main id="main-content">
+      <section class="chart-container filter-stylish">
+        <h2>⚙️ Filter Data Interaktif</h2>
+        <div class="controls enhanced-filters">
+          <div class="filter-group">
+            <label for="filter-jk">Jenis Kelamin:</label>
+            <select id="filter-jk" onchange="updateAllCharts()">
+              <option value="all">Semua</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-kategori">Kategori ISPA:</label>
+            <select id="filter-kategori" onchange="updateAllCharts()">
+              <option value="all">Semua Kategori</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <div id="chart-grid">
+        <section class="chart-container" id="barChart-section">
+          <h2>📈 Perbandingan Kasus Berdasarkan Kategori ISPA</h2>
+          <canvas id="barChart"></canvas>
+          <div class="insight-card">
+            <p class="insight">
+              Insight: terlihat bahwa kasus ISPA Berat jauh mendominasi dengan
+              510 kasus, sementara ISPA Ringan hanya menyumbang 116 kasus. Rasio
+              ini menunjukkan bahwa kasus ISPA Berat kurang lebih 4,4 kali lipat
+              lebih banyak daripada ISPA Ringan. Temuan ini sangat penting
+              karena mengindikasikan bahwa sebagian besar pasien baru mencari
+              atau mendapatkan penanganan saat kondisi mereka sudah tergolong
+              serius, sehingga membebankan layanan kesehatan dan berpotensi
+              menimbulkan risiko komplikasi yang lebih tinggi. Situasi ini
+              menekankan perlunya peningkatan upaya deteksi dini dan kesadaran
+              masyarakat agar kasus dapat ditangani sebelum mencapai tingkat
+              keparahan.
+            </p>
+          </div>
+        </section>
+
+        <section class="chart-container" id="pieChart-section">
+          <h2>🥧 Proporsi Kasus Berdasarkan Jenis Kelamin</h2>
+          <canvas id="pieChart"></canvas>
+          <div class="insight-card">
+            <p class="insight">
+              Insight: Analisis proporsi kasus ISPA berdasarkan jenis kelamin
+              memperlihatkan dominasi yang signifikan pada pasien laki-laki.
+              Dari total 626 kasus yang tercatat, pasien laki-laki menyumbang
+              mayoritas substansial, yaitu 451 kasus (sekitar 72%). Sementara
+              itu, pasien perempuan tercatat sebanyak 175 kasus (sekitar 28%).
+              Disparitas yang besar ini menggarisbawahi bahwa populasi laki-laki
+              memiliki tingkat kejadian ISPA yang jauh lebih tinggi dibandingkan
+              dengan perempuan. Temuan ini dapat mengarahkan penelitian lebih
+              lanjut untuk memahami faktor-faktor risiko spesifik yang mungkin
+              lebih memengaruhi laki-laki, seperti paparan lingkungan kerja,
+              gaya hidup, atau perbedaan perilaku pencarian pengobatan, yang
+              berkontribusi pada perbedaan proporsi kasus ini.
+            </p>
+          </div>
+        </section>
+
+        <section class="chart-container" id="usiaChart-section">
+          <h2>📊 Distribusi Frekuensi Usia Pasien</h2>
+          <canvas id="usiaChart"></canvas>
+          <div class="insight-card">
+            <p class="insight">
+              Insight: Analisis terhadap distribusi frekuensi usia pasien yang
+              didiagnosis dengan ISPA menunjukkan adanya konsentrasi kasus yang
+              sangat jelas pada rentang usia tertentu, serta korelasi kuat
+              antara usia pasien dan tingkat keparahan penyakit. Mayoritas kasus
+              ISPA, yakni hampir 80% dari total keseluruhan, terkumpul dalam
+              kelompok usia dewasa produktif hingga lansia, yaitu antara 25
+              hingga 65 tahun ke atas. Secara spesifik, kelompok Pra-Lansia
+              (45-64 Tahun) memegang jumlah frekuensi tertinggi, menyumbang
+              hampir setengah dari seluruh data yang diamati. Tren ini
+              mengindikasikan bahwa kelompok usia ini merupakan segmen populasi
+              yang paling sering terjangkit.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 | Dibuat oleh Tito Purwana Sasmita</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
